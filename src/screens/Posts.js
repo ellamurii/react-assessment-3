@@ -29,13 +29,13 @@ const Posts = (props) => {
     fetchPosts(userId);
   }, [fetchPosts, userId]);
 
-  if (!user) {
-    fetchUsers(userId);
+  if (posts.isLoading) {
     return <Spinner />;
   }
 
-  if (posts.isLoading) {
-    return <Spinner />;
+  if (!user) {
+    fetchUsers(userId);
+    return null;
   }
 
   const renderCard = (post) => {
