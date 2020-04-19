@@ -1,16 +1,27 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
-import UsersContainer from "../containers/UsersContainer";
+import Users from "../screens/Users";
+import Posts from "../screens/Posts";
+import Comments from "../screens/Comments";
 
 const App = () => {
   return (
-    <div className="ui container raised teal segment">
-      <h3 className="ui horizontal divider header teal">
-        <i className="circular users icon"></i>
-        Members
-      </h3>
-      <UsersContainer />
-    </div>
+    <Router>
+      <div className="ui container raised teal segment">
+        <Switch>
+          <Route exact path="/" component={Users} />
+          <Route path="/user/:userId" component={Posts} />
+          <Route path="/post/:postId" component={Comments} />
+          <Route render={() => <Redirect to="/" />} />
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

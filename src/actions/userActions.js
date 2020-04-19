@@ -1,5 +1,5 @@
 import jsonPlaceholder from "../api/jsonPlaceholder";
-import { FETCH_USERS } from "./userActionTypes";
+import { FETCH_USERS } from "../actionTypes";
 import faker from "faker";
 
 export const fetchUsers = () => async (dispatch) => {
