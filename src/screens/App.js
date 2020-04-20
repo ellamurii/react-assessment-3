@@ -17,7 +17,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Users} />
           <Route path="/user/:userId" component={Posts} />
-          <Route path="/post/:postId" component={Comments} />
+          <Route path="/post/:userId/:postId" component={Comments} />
           <Route render={() => <Redirect to="/" />} />
         </Switch>
       </div>

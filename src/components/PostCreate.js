@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, reduxForm, reset } from "redux-form";
 
-const onSubmitSuccess = (result, dispatch) => dispatch(reset("post"));
+const onSubmitSuccess = (result, dispatch) => dispatch(reset("newPost"));
 
 const PostCreate = (props) => {
   const { handleSubmit } = props;

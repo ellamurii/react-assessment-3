@@ -11,7 +11,7 @@ const PostCard = ({ post, deletePost, navigateTo }) => {
         <div className="ui buttons right floated">
           <button
             className="ui teal button"
-            onClick={() => navigateTo(`/post/${post.id}`)}
+            onClick={() => navigateTo(`/post/${post.userId}/${post.id}`)}
           >
             View
           </button>

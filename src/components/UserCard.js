@@ -1,10 +1,6 @@
 import React from "react";
 
 const UserCard = ({ user, navigateTo }) => {
-  if (!user) {
-    return null;
-  }
-
   return (
     <div className="content" onClick={() => navigateTo(`/user/${user.id}`)}>
       <img

@@ -38,6 +38,10 @@ const Posts = (props) => {
     return null;
   }
 
+  const newPost = (post) => {
+    addPost(userId, post.title, post.body);
+  };
+
   const renderCard = (post) => {
     return (
       <PostCard
@@ -47,10 +51,6 @@ const Posts = (props) => {
         navigateTo={navigateTo}
       />
     );
-  };
-
-  const newPost = (post) => {
-    addPost(userId, post.title, post.body);
   };
 
   return (
@@ -65,10 +65,9 @@ const Posts = (props) => {
   );
 };
 
-const mapStateToProps = (state, { match }) => {
-  const posts = state.posts;
+const mapStateToProps = ({ posts, users }, { match }) => {
   const userId = Number(match.params.userId);
-  const user = state.users.find((user) => user.id === userId);
+  const user = users.find((user) => user.id === userId);
   return { posts, userId, user };
 };
 
