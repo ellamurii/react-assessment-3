@@ -1,6 +1,6 @@
-import { FETCH_COMMENTS, LOADING } from "../actionTypes";
+import { FETCH_COMMENTS, LOADING } from '../actionTypes';
 
-const initialState = {
+export const initialState = {
   data: [],
   isLoading: true,
 };
