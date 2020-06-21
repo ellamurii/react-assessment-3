@@ -1,9 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { fetchUsers } from "../actions/userActions";
-import UserCard from "../components/UserCard";
-import Header from "../components/Header";
+import React from 'react';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { fetchUsers } from '../actions/userActions';
+import UserCard from '../components/UserCard';
+import Header from '../components/Header';
 
 const Users = (props) => {
   if (!props.users.length) {
@@ -17,7 +17,7 @@ const Users = (props) => {
 
   const renderCard = (user) => {
     return (
-      <div className="item" key={user.id}>
+      <div data-testid="user-card" className="item" key={user.id}>
         <UserCard user={user} navigateTo={navigateTo} />
       </div>
     );
