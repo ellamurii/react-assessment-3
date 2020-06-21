@@ -24,7 +24,7 @@ const Users = (props) => {
   };
 
   return (
-    <div className="ui relaxed divided list">
+    <div className="ui relaxed divided list" data-testid="users-container">
       <Header title="Members" />
       {props.users.map(renderCard)}
     </div>
